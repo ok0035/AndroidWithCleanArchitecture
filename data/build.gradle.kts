@@ -39,31 +39,29 @@ android {
 
 dependencies {
 
-    val platformImpls = listOf(Libs.okHttpClientBom)
-
-    val impls = listOf(
-        Libs.coreKtx,
-        Libs.material3,
-        Libs.retrofit,
-        Libs.okHttpClient,
-        Libs.okHttpInterceptor,
-        Libs.sandwich,
-        Libs.sandwichForRetrofit
+    platformImplementations(listOf(Libs.okHttpClientBom))
+    implementations(
+        listOf(
+            Libs.coreKtx,
+            Libs.material3,
+            Libs.retrofit,
+            Libs.okHttpClient,
+            Libs.okHttpInterceptor,
+            Libs.sandwich,
+            Libs.sandwichForRetrofit
+        )
     )
-
-    val testImpls = listOf(
-        Libs.junit,
-        Libs.okHttpMockWebServer
+    testImplementations(
+        listOf(
+            Libs.junit,
+            Libs.okHttpMockWebServer
+        )
     )
-
-    val androidTestImpls = listOf(
-        Libs.androidxTestJunit,
-        Libs.androidxEspressoCore
+    androidTestImplementations(
+        listOf(
+            Libs.androidxTestJunit,
+            Libs.androidxEspressoCore
+        )
     )
-
-    platformImplementations(platformImpls)
-    implementations(impls)
-    testImplementations(testImpls)
-    androidTestImplementations(androidTestImpls)
 
 }
