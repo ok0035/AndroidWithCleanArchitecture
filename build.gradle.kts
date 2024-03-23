@@ -2,8 +2,9 @@
 plugins {
     id("com.android.application") version Plugins.androidAppVer apply false
     id("org.jetbrains.kotlin.android") version Plugins.kotlinAndroidVer apply false
+    id("com.android.library") version Plugins.androidAppVer apply false
+    id("com.google.dagger.hilt.android") version Libs.hiltVer apply false
     kotlin("kapt") version Plugins.kaptVer apply false
-    id("com.android.library") version "8.2.0" apply false
 }
 
 tasks.register("clean", Delete::class) {

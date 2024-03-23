@@ -5,6 +5,7 @@ import Libs.testImplementations
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
 }
 
 android {
@@ -28,8 +29,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_19
-        targetCompatibility = JavaVersion.VERSION_19
+        sourceCompatibility = AppConfig.javaVersion
+        targetCompatibility = AppConfig.javaVersion
     }
     kotlinOptions {
         jvmTarget = AppConfig.jvmTargetVer
@@ -38,21 +39,22 @@ android {
 
 dependencies {
 
-    val impls = listOf(
-        Libs.coreKtx,
-        Libs.material3
+    implementations(
+        listOf(
+            Libs.coreKtx,
+        )
     )
 
-    val testImpls = listOf(
-        Libs.junit
+    testImplementations(
+        listOf(
+            Libs.junit
+        )
     )
 
-    val androidTestImpls = listOf(
-        Libs.androidxTestJunit,
-        Libs.androidxEspressoCore
+    androidTestImplementations(
+        listOf(
+            Libs.androidxTestJunit,
+            Libs.androidxEspressoCore
+        )
     )
-
-    implementations(impls)
-    testImplementations(testImpls)
-    androidTestImplementations(androidTestImpls)
 }
