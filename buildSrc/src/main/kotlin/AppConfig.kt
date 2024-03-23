@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion
+
 object AppConfig {
 
     const val compileSdkVer = 34
@@ -6,7 +8,9 @@ object AppConfig {
     const val versionCode = 1
     const val versionName = "1.0"
 
-    const val jvmTargetVer = "19"
+    const val jvmTargetVer = "11"
     const val kotlinCompilerExtVer = "1.5.11"
+
+    val javaVersion = JavaVersion.VERSION_11
 
 }

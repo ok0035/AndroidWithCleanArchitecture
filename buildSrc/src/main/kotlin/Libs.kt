@@ -23,7 +23,7 @@ object Libs {
         "com.github.skydoves:sandwich-retrofit:$sandwichVer" // For Retrofit
 
     //Hilt
-    private const val hiltVer = "2.51"
+    const val hiltVer = "2.51"
     const val hilt = "com.google.dagger:hilt-android:$hiltVer"
     const val hiltCompiler = "com.google.dagger:hilt-compiler:$hiltVer"
     const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:$hiltVer"
@@ -97,7 +97,5 @@ object Libs {
             add("kaptTest", dependency)
         }
     }
-
-
 
 }
