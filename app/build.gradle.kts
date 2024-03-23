@@ -60,13 +60,16 @@ android {
 dependencies {
 
     val platformImpls = listOf(
-        Libs.composeBom
+        Libs.composeBom,
+        Libs.okHttpClientBom
     )
 
     val impls = listOf(
         Libs.coreKtx,
         Libs.lifeCycleRuntimeKtx,
         Libs.retrofit,
+        Libs.okHttpClient,
+        Libs.okHttpInterceptor,
         Libs.sandwich,
         Libs.sandwichForRetrofit,
         Libs.activityCompose,
@@ -76,7 +79,10 @@ dependencies {
         Libs.material3,
     )
 
-    val testImpls= listOf(Libs.junit)
+    val testImpls= listOf(
+        Libs.junit,
+        Libs.okHttpMockWebServer
+    )
 
     val androidPlatformImpls = listOf(Libs.composeBom)
     val androidTestImpls = listOf(
