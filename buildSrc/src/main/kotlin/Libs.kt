@@ -2,7 +2,6 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 
 object Libs {
 
-    const val kaptPluginVer = "1.9.23"
     const val coreKtx = "androidx.core:core-ktx:1.12.0"
     const val lifeCycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:2.7.0"
     const val retrofit = "com.squareup.retrofit2:retrofit:2.10.0"

@@ -1,1 +1,1 @@
-/Users/zerodeg/AndroidStudioProjects/Template/buildSrc/build/classes/kotlin/main/AppConfig.class:/Users/zerodeg/AndroidStudioProjects/Template/buildSrc/build/classes/kotlin/main/Libs.class
+/Users/zerodeg/AndroidStudioProjects/Template/buildSrc/build/classes/kotlin/main/AppConfig.class:/Users/zerodeg/AndroidStudioProjects/Template/buildSrc/build/classes/kotlin/main/Libs.class:/Users/zerodeg/AndroidStudioProjects/Template/buildSrc/build/classes/kotlin/main/Plugins.class

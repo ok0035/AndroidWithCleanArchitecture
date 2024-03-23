@@ -1,8 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id("com.android.application") version "8.2.0" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.0" apply false
-    kotlin("kapt") version Libs.kaptPluginVer apply false
+    id("com.android.application") version Plugins.androidAppVer apply false
+    id("org.jetbrains.kotlin.android") version Plugins.kotlinAndroidVer apply false
+    kotlin("kapt") version Plugins.kaptVer apply false
 }
 
 tasks.register("clean", Delete::class) {
