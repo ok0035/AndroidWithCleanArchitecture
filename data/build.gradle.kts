@@ -40,7 +40,10 @@ dependencies {
 
     val impls = listOf(
         Libs.coreKtx,
-        Libs.material3
+        Libs.material3,
+        Libs.retrofit,
+        Libs.sandwich,
+        Libs.sandwichForRetrofit
     )
 
     val testImpls = listOf(
