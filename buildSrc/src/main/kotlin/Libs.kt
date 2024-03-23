@@ -22,6 +22,12 @@ object Libs {
     const val sandwichForRetrofit =
         "com.github.skydoves:sandwich-retrofit:$sandwichVer" // For Retrofit
 
+    //Hilt
+    private const val hiltVer = "2.51"
+    const val hilt = "com.google.dagger:hilt-android:$hiltVer"
+    const val hiltCompiler = "com.google.dagger:hilt-compiler:$hiltVer"
+    const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:$hiltVer"
+
     //Compose
     const val activityCompose = "androidx.activity:activity-compose:1.8.2"
     const val composeBom = "androidx.compose:compose-bom:2023.08.00"
@@ -32,12 +38,13 @@ object Libs {
     const val composeUiTooling = "androidx.compose.ui:ui-tooling"
     const val composeUiTestManifest = "androidx.compose.ui:ui-test-manifest"
 
+    //Test
     const val material3 = "androidx.compose.material3:material3"
     const val junit = "junit:junit:4.13.2"
     const val androidxTestJunit = "androidx.test.ext:junit:1.1.5"
     const val androidxEspressoCore = "androidx.test.espresso:espresso-core:3.5.1"
 
-    fun DependencyHandler.kapt(list: List<String>) {
+    fun DependencyHandler.kapts(list: List<String>) {
         list.forEach { dependency ->
             add("kapt", dependency)
         }
@@ -78,5 +85,19 @@ object Libs {
             add("testImplementation", dependency)
         }
     }
+
+    fun DependencyHandler.kaptAndroidTests(list: List<String>) {
+        list.forEach { dependency ->
+            add("androidTestAnnotationProcessor", dependency)
+        }
+    }
+
+    fun DependencyHandler.kaptTests(list: List<String>) {
+        list.forEach { dependency ->
+            add("kaptTest", dependency)
+        }
+    }
+
+
 
 }

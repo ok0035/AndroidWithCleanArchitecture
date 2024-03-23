@@ -7,6 +7,6 @@ object AppConfig {
     const val versionName = "1.0"
 
     const val jvmTargetVer = "1.8"
-    const val kotlinCompilerExtVer = "1.5.1"
+    const val kotlinCompilerExtVer = "1.5.11"
 
 }
