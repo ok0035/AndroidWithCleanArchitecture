@@ -2,6 +2,9 @@ import Libs.androidPlatformTestImplementations
 import Libs.androidTestImplementations
 import Libs.debugImplementations
 import Libs.implementations
+import Libs.kaptAndroidTests
+import Libs.kaptTests
+import Libs.kapts
 import Libs.platformImplementations
 import Libs.testImplementations
 
@@ -59,48 +62,67 @@ android {
 
 dependencies {
 
-    val platformImpls = listOf(
-        Libs.composeBom,
-        Libs.okHttpClientBom
+    platformImplementations(
+        listOf(
+            Libs.composeBom,
+            Libs.okHttpClientBom
+        )
     )
 
-    val impls = listOf(
-        Libs.coreKtx,
-        Libs.lifeCycleRuntimeKtx,
-        Libs.retrofit,
-        Libs.okHttpClient,
-        Libs.okHttpInterceptor,
-        Libs.sandwich,
-        Libs.sandwichForRetrofit,
-        Libs.activityCompose,
-        Libs.composeUi,
-        Libs.composeUiGraphics,
-        Libs.composeUiToolingPreview,
-        Libs.material3,
+    implementations(
+        listOf(
+            Libs.coreKtx,
+            Libs.lifeCycleRuntimeKtx,
+            Libs.retrofit,
+            Libs.okHttpClient,
+            Libs.okHttpInterceptor,
+            Libs.sandwich,
+            Libs.sandwichForRetrofit,
+            Libs.activityCompose,
+            Libs.composeUi,
+            Libs.composeUiGraphics,
+            Libs.composeUiToolingPreview,
+            Libs.material3,
+        )
     )
 
-    val testImpls= listOf(
-        Libs.junit,
-        Libs.okHttpMockWebServer
+    kapts(listOf(Libs.hiltCompiler))
+    kaptTests(listOf(Libs.hiltCompiler))
+
+    testImplementations(
+        listOf(
+            Libs.junit,
+            Libs.okHttpMockWebServer,
+            Libs.hiltAndroidTest
+        )
     )
 
-    val androidPlatformImpls = listOf(Libs.composeBom)
-    val androidTestImpls = listOf(
-        Libs.androidxTestJunit,
-        Libs.androidxEspressoCore,
-        Libs.composeUiTestJunit
+    androidPlatformTestImplementations(listOf(Libs.composeBom))
+
+    androidTestImplementations(
+        listOf(
+            Libs.androidxTestJunit,
+            Libs.androidxEspressoCore,
+            Libs.composeUiTestJunit,
+            Libs.hiltAndroidTest
+        )
     )
 
-    val debugImpls = listOf(
-        Libs.composeUiTooling,
-        Libs.composeUiTestManifest
+    kaptAndroidTests(
+        listOf(
+            Libs.hiltCompiler
+        )
     )
 
-    platformImplementations(platformImpls)
-    implementations(impls)
-    testImplementations(testImpls)
-    androidPlatformTestImplementations(androidPlatformImpls)
-    androidTestImplementations(androidTestImpls)
-    debugImplementations(debugImpls)
+    debugImplementations(
+        listOf(
+            Libs.composeUiTooling,
+            Libs.composeUiTestManifest
+        )
+    )
 
+}
+
+kapt {
+    correctErrorTypes = true
 }
