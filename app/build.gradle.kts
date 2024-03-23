@@ -67,6 +67,8 @@ dependencies {
         Libs.coreKtx,
         Libs.lifeCycleRuntimeKtx,
         Libs.retrofit,
+        Libs.sandwich,
+        Libs.sandwichForRetrofit,
         Libs.activityCompose,
         Libs.composeUi,
         Libs.composeUiGraphics,
