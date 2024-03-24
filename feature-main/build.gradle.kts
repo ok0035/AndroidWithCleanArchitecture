@@ -35,6 +35,12 @@ android {
             )
         }
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = AppConfig.kotlinCompilerExtVer
+    }
     compileOptions {
         sourceCompatibility = AppConfig.javaVersion
         targetCompatibility = AppConfig.javaVersion
@@ -60,7 +66,12 @@ dependencies {
     implementations(
         listOf(
             Libs.coreKtx,
-            Libs.lifeCycleRuntimeKtx,
+            Libs.lifecycleRuntimeKtx,
+            Libs.lifecycleForCompose,
+            Libs.lifecycleService,
+            Libs.viewModel,
+            Libs.viewModelForCompose,
+            Libs.viewModelForSavedState,
             Libs.retrofit,
             Libs.okHttpClient,
             Libs.okHttpInterceptor,
@@ -75,7 +86,12 @@ dependencies {
         )
     )
 
-    kapts(listOf(Libs.hiltCompiler))
+    kapts(
+        listOf(
+            Libs.hiltCompiler,
+            Libs.lifecycleCompiler
+        )
+    )
     kaptTests(listOf(Libs.hiltCompiler))
 
     testImplementations(
