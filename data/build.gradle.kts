@@ -22,13 +22,29 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField(
+                type = "String",
+                name = "baseUrl",
+                value = "\"https://httpbin.org/\""
+            )
+        }
         release {
+            buildConfigField(
+                type = "String",
+                name = "baseUrl",
+                value = "\"https://httpbin.org/\""
+            )
+
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
+    }
+    buildFeatures {
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = AppConfig.javaVersion
@@ -47,7 +63,9 @@ dependencies {
 
     implementations(
         listOf(
+            project(":domain"),
             platform(Libs.okHttpClientBom),
+            Libs.gson,
             Libs.coreKtx,
             Libs.retrofit,
             Libs.okHttpClient,

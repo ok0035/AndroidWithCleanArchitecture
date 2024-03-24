@@ -14,6 +14,9 @@ object Libs {
     const val okHttpInterceptor = "com.squareup.okhttp3:logging-interceptor"
     const val okHttpMockWebServer = "com.squareup.okhttp3:mockwebserver:$okHttpClientVer"
 
+    //Gson
+    const val gson = "com.google.code.gson:gson:2.10.1"
+
     //Sandwich
     private const val sandwichVer = "2.0.6"
     const val sandwich = "com.github.skydoves:sandwich:$sandwichVer"
