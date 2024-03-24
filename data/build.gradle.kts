@@ -1,13 +1,14 @@
 import Libs.androidTestImplementations
 import Libs.implementations
 import Libs.kaptAndroidTests
+import Libs.kapts
 import Libs.testImplementations
 
 plugins {
+    kotlin("kapt")
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
-    kotlin("kapt")
 }
 
 android {
@@ -82,6 +83,13 @@ dependencies {
             Libs.hiltAndroidTest
         )
     )
+
+    kapts(
+        listOf(
+            Libs.hiltCompiler
+        )
+    )
+
     androidTestImplementations(
         listOf(
             Libs.androidxTestJunit,

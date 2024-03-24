@@ -2,7 +2,7 @@ package com.zerosword.domain.reporitory
 
 interface MainRepository {
     suspend fun getData(
-        onSuccess: () -> Unit,
-        onError: () -> Unit
+        onSuccess: (res: String) -> Unit,
+        onError: (errorMessage: String) -> Unit
     )
 }

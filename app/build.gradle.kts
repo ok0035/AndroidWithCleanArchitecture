@@ -7,10 +7,10 @@ import Libs.kapts
 import Libs.testImplementations
 
 plugins {
+    kotlin("kapt")
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
-    kotlin("kapt")
 }
 
 android {

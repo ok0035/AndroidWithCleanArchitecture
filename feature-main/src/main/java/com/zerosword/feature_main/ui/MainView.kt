@@ -11,15 +11,32 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import com.zerosword.resources.ui.theme.DarkColorScheme
 import com.zerosword.resources.ui.theme.LightColorScheme
 import com.zerosword.resources.ui.theme.Typography
 
 @Composable
+fun MainView(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    // Dynamic color is available on Android 12+
+    dynamicColor: Boolean = true,
+    content: @Composable () -> Unit
+) {
+//    val viewModel: MainViewModel = hiltViewModel()
+
+    TemplateTheme(
+        darkTheme, dynamicColor, content
+    )
+
+}
+
+@Composable
 fun TemplateTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
+//    viewModel: MainViewModel = MainViewModel(),
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
@@ -46,4 +63,12 @@ fun TemplateTheme(
         typography = Typography,
         content = content
     )
+}
+
+@Preview
+@Composable
+fun MainPreview() {
+    TemplateTheme() {
+
+    }
 }
