@@ -1,12 +1,13 @@
 import Libs.androidTestImplementations
 import Libs.debugImplementations
 import Libs.implementations
+import Libs.kapts
 import Libs.testImplementations
 
 plugins {
+    kotlin("kapt")
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
 }
 
 android {
@@ -63,6 +64,12 @@ dependencies {
             Libs.composeUiGraphics,
             Libs.composeUiToolingPreview,
             Libs.material3,
+        )
+    )
+
+    kapts(
+        listOf(
+            Libs.hiltCompiler
         )
     )
 

@@ -22,10 +22,17 @@ object NetworkModule {
 
     @Provides
     @Singleton
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
+        .baseUrl(BuildConfig.baseUrl)
+        .client(okHttpClient)
+        .build()
+
+    @Provides
+    @Singleton
     fun provideOkHttpClient(
         httpCache: Cache,
         loggingInterceptor: HttpLoggingInterceptor
-    ) = OkHttpClient.Builder()
+    ): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor(loggingInterceptor)
         .cache(httpCache)
         .connectTimeout(5, TimeUnit.SECONDS)
@@ -34,7 +41,9 @@ object NetworkModule {
         .callTimeout(10, TimeUnit.SECONDS)
         .build()
 
-    fun provideOkHttpCache(@ApplicationContext context: Context) = Cache(
+    @Singleton
+    @Provides
+    fun provideOkHttpCache(@ApplicationContext context: Context): Cache = Cache(
         directory = File(
             context.cacheDir,
             "http_cache",
@@ -43,18 +52,13 @@ object NetworkModule {
         maxSize = 50L * 1024L * 1024L // 50 MiB
     )
 
-    fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor().apply {
+    @Singleton
+    @Provides
+    fun provideHttpLoggingInterceptor() : HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
         level =
             if (BuildConfig.DEBUG)
                 HttpLoggingInterceptor.Level.BODY
             else HttpLoggingInterceptor.Level.BASIC
     }
-
-    @Provides
-    @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
-        .baseUrl(BuildConfig.baseUrl)
-        .client(okHttpClient)
-        .build()
 
 }

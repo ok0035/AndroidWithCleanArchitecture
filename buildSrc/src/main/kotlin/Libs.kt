@@ -28,6 +28,7 @@ object Libs {
     const val hilt = "com.google.dagger:hilt-android:$hiltVer"
     const val hiltCompiler = "com.google.dagger:hilt-compiler:$hiltVer"
     const val hiltAndroidTest = "com.google.dagger:hilt-android-testing:$hiltVer"
+    const val hiltForCompose = "androidx.hilt:hilt-navigation-compose:1.0.0"
 
     //Compose
     const val activityCompose = "androidx.activity:activity-compose:1.8.2"

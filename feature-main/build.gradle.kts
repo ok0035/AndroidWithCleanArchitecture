@@ -7,10 +7,10 @@ import Libs.kapts
 import Libs.testImplementations
 
 plugins {
+    kotlin("kapt")
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
-    kotlin("kapt")
 }
 
 android {
@@ -79,7 +79,8 @@ dependencies {
             Libs.composeUiGraphics,
             Libs.composeUiToolingPreview,
             Libs.material3,
-            Libs.hilt
+            Libs.hilt,
+            Libs.hiltForCompose
         )
     )
 

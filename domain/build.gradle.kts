@@ -1,11 +1,14 @@
 import Libs.androidTestImplementations
 import Libs.implementations
+import Libs.kaptAndroidTests
+import Libs.kapts
 import Libs.testImplementations
 
 plugins {
+    kotlin("kapt")
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -40,24 +43,43 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
 
     implementations(
         listOf(
             Libs.coreKtx,
+            Libs.hilt
+        )
+    )
+
+    kapts(
+        listOf(
+            Libs.hiltCompiler
         )
     )
 
     testImplementations(
         listOf(
-            Libs.junit
+            Libs.junit,
+            Libs.hiltAndroidTest
         )
     )
 
     androidTestImplementations(
         listOf(
             Libs.androidxTestJunit,
-            Libs.androidxEspressoCore
+            Libs.androidxEspressoCore,
+            Libs.hiltAndroidTest
+        )
+    )
+
+    kaptAndroidTests(
+        listOf(
+            Libs.hiltCompiler
         )
     )
 }
