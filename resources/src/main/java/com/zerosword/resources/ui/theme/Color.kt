@@ -1,4 +1,4 @@
-package com.zerosword.template.ui.theme
+package com.zerosword.resources.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

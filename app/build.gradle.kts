@@ -1,11 +1,9 @@
-import Libs.androidPlatformTestImplementations
 import Libs.androidTestImplementations
 import Libs.debugImplementations
 import Libs.implementations
 import Libs.kaptAndroidTests
 import Libs.kaptTests
 import Libs.kapts
-import Libs.platformImplementations
 import Libs.testImplementations
 
 plugins {
@@ -67,15 +65,14 @@ kapt {
 
 dependencies {
 
-    platformImplementations(
-        listOf(
-            Libs.composeBom,
-            Libs.okHttpClientBom
-        )
-    )
-
     implementations(
         listOf(
+            project(":data"),
+            project(":domain"),
+            project(":feature-main"),
+            project(":resources"),
+            platform(Libs.composeBom),
+            platform(Libs.okHttpClientBom),
             Libs.coreKtx,
             Libs.lifecycleRuntimeKtx,
             Libs.lifecycleForCompose,
@@ -113,10 +110,9 @@ dependencies {
         )
     )
 
-    androidPlatformTestImplementations(listOf(Libs.composeBom))
-
     androidTestImplementations(
         listOf(
+            platform(Libs.composeBom),
             Libs.androidxTestJunit,
             Libs.androidxEspressoCore,
             Libs.composeUiTestJunit,

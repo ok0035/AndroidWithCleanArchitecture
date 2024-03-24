@@ -1,7 +1,6 @@
 import Libs.androidTestImplementations
 import Libs.implementations
 import Libs.kaptAndroidTests
-import Libs.platformImplementations
 import Libs.testImplementations
 
 plugins {
@@ -46,9 +45,9 @@ kapt {
 
 dependencies {
 
-    platformImplementations(listOf(Libs.okHttpClientBom))
     implementations(
         listOf(
+            platform(Libs.okHttpClientBom),
             Libs.coreKtx,
             Libs.retrofit,
             Libs.okHttpClient,

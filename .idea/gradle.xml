@@ -25,6 +25,7 @@
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/feature-main" />
+            <option value="$PROJECT_DIR$/resources" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

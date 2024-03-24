@@ -58,15 +58,9 @@ object Libs {
         }
     }
 
-    fun DependencyHandler.implementations(list: List<String>) {
+    fun DependencyHandler.implementations(list: List<Any>) {
         list.forEach { dependency ->
             add("implementation", dependency)
-        }
-    }
-
-    fun DependencyHandler.platformImplementations(list: List<String>) {
-        list.forEach { dependency ->
-            add("implementation", platform(dependency))
         }
     }
 
@@ -76,21 +70,15 @@ object Libs {
         }
     }
 
-    fun DependencyHandler.androidTestImplementations(list: List<String>) {
+    fun DependencyHandler.androidTestImplementations(list: List<Any>) {
         list.forEach { dependency ->
             add("androidTestImplementation", dependency)
         }
     }
 
-    fun DependencyHandler.androidPlatformTestImplementations(list: List<String>) {
-        list.forEach { dependency ->
-            add("androidTestImplementation", platform(dependency))
-        }
-    }
-
     fun DependencyHandler.debugImplementations(list: List<String>) {
         list.forEach { dependency ->
-            add("testImplementation", dependency)
+            add("debugImplementation", dependency)
         }
     }
 
