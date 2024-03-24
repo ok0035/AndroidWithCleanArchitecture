@@ -3,9 +3,7 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 object Libs {
 
     const val coreKtx = "androidx.core:core-ktx:1.12.0"
-    const val lifeCycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:2.7.0"
 
-    //Network
     //Retrofit
     const val retrofit = "com.squareup.retrofit2:retrofit:2.10.0"
 
@@ -43,6 +41,16 @@ object Libs {
     const val junit = "junit:junit:4.13.2"
     const val androidxTestJunit = "androidx.test.ext:junit:1.1.5"
     const val androidxEspressoCore = "androidx.test.espresso:espresso-core:3.5.1"
+
+    //Lifecycle
+    private const val lifecycleVer = "2.7.0"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVer"
+    const val viewModelForCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVer"
+    const val lifecycleForCompose = "androidx.lifecycle:lifecycle-runtime-compose:$lifecycleVer"
+    const val viewModelForSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVer"
+    const val lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:$lifecycleVer"
+    const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVer"
+    const val lifecycleService = "androidx.lifecycle:lifecycle-service:$lifecycleVer"
 
     fun DependencyHandler.kapts(list: List<String>) {
         list.forEach { dependency ->
