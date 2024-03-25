@@ -5,7 +5,9 @@ object Libs {
     const val coreKtx = "androidx.core:core-ktx:1.12.0"
 
     //Retrofit
-    const val retrofit = "com.squareup.retrofit2:retrofit:2.10.0"
+    private const val retrofitVer = "2.10.0"
+    const val retrofit = "com.squareup.retrofit2:retrofit:$retrofitVer"
+    const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:$retrofitVer"
 
     //OkHttpClient
     private const val okHttpClientVer = "4.12.0"

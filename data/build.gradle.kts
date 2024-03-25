@@ -69,6 +69,7 @@ dependencies {
             Libs.gson,
             Libs.coreKtx,
             Libs.retrofit,
+            Libs.retrofitGsonConverter,
             Libs.okHttpClient,
             Libs.okHttpInterceptor,
             Libs.sandwich,

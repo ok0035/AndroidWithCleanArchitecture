@@ -2,6 +2,8 @@ package com.zerosword.data.di
 
 import android.content.Context
 import androidx.core.os.BuildCompat
+import com.google.gson.GsonBuilder
+import com.skydoves.sandwich.retrofit.adapters.ApiResponseCallAdapterFactory
 import com.zerosword.data.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -12,8 +14,10 @@ import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -22,10 +26,28 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
+    fun provideRetrofit(
+        okHttpClient: OkHttpClient,
+        responseCallAdapterFactory: ApiResponseCallAdapterFactory,
+        gsonConverterFactory: GsonConverterFactory
+    ): Retrofit = Retrofit.Builder()
         .baseUrl(BuildConfig.baseUrl)
+        .addCallAdapterFactory(responseCallAdapterFactory)
+        .addConverterFactory(gsonConverterFactory)
         .client(okHttpClient)
         .build()
+
+    @Provides
+    @Singleton
+    fun providesApiResponseConverterFactory(): ApiResponseCallAdapterFactory =
+        ApiResponseCallAdapterFactory.create()
+
+    @Provides
+    @Singleton
+    fun provideGsonConverter(): GsonConverterFactory = GsonConverterFactory.create(
+        GsonBuilder()
+            .create()
+    ) ?: GsonConverterFactory.create()
 
     @Provides
     @Singleton
