@@ -42,6 +42,10 @@ object Libs {
     const val composeUiTooling = "androidx.compose.ui:ui-tooling"
     const val composeUiTestManifest = "androidx.compose.ui:ui-test-manifest"
 
+    //Image
+    const val glide = "com.github.bumptech.glide:glide:4.14.2" // lib + kapt
+    const val glideForCompose = "com.github.bumptech.glide:compose:1.0.0-beta01"
+
     //Test
     const val material3 = "androidx.compose.material3:material3"
     const val junit = "junit:junit:4.13.2"

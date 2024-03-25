@@ -56,7 +56,6 @@ fun MainView(
 fun TemplateTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-//    viewModel: MainViewModel = MainViewModel(),
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
