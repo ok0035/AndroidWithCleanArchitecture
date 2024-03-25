@@ -19,7 +19,7 @@ class MainRepositoryImpl @Inject constructor(
     ) {
         mainService.getData()
             .suspendOnSuccess {
-                onSuccess("${(this.data.origin ?: "test")} hello template")
+                onSuccess("Nice to meet you ${(this.data.origin ?: "")}")
             }.suspendOnFailure {
                 onError(this.message())
             }

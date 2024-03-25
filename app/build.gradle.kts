@@ -82,6 +82,7 @@ dependencies {
             Libs.viewModelForCompose,
             Libs.viewModelForSavedState,
             Libs.retrofit,
+            Libs.retrofitGsonConverter,
             Libs.okHttpClient,
             Libs.okHttpInterceptor,
             Libs.sandwich,
