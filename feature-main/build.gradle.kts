@@ -79,6 +79,8 @@ dependencies {
             Libs.composeUiGraphics,
             Libs.composeUiToolingPreview,
             Libs.material3,
+            Libs.glide,
+            Libs.glideForCompose,
             Libs.hilt,
             Libs.hiltForCompose
         )
@@ -87,7 +89,8 @@ dependencies {
     kapts(
         listOf(
             Libs.hiltCompiler,
-            Libs.lifecycleCompiler
+            Libs.lifecycleCompiler,
+            Libs.glide
         )
     )
     kaptTests(listOf(Libs.hiltCompiler))
